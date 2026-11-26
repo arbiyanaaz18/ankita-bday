@@ -16,6 +16,7 @@ var BOW='<svg viewBox="0 0 100 70" aria-hidden="true"><defs><linearGradient id="
 $$('[data-bow]').forEach(function(el){
 el.innerHTML=BOW;
 });
+
 $$('[data-bow]').forEach(function(el,i){
 if(i>0){var d=el.querySelector('defs');if(d)d.remove();}
 });
@@ -107,6 +108,7 @@ $('#albumBtn').classList.remove('hidden');
 
 $('#band').addEventListener('click',untie);
 $('#scrollBow').addEventListener('click',untie);
+
 $('#albumBtn').addEventListener('click',function(){
 show('album');
 });
@@ -115,7 +117,7 @@ show('album');
 function pol(src,cap,r,t,vid,poster){
 var m=vid?
 '<video src="'+src+'" poster="'+poster+'" controls playsinline preload="metadata"></video>':
-'<img src="'+src+'" alt="'+cap+'" loading="lazy">';
+'<img src="'+src+'" alt="'+cap+'" loading="eager" decoding="async" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'image-error\')">';
 return '<figure class="pol" style="--r:'+r+'deg;--t:'+t+'deg;margin:0">'+m+'<figcaption class="cap">'+cap+'</figcaption></figure>';
 }
 
@@ -133,27 +135,27 @@ st('✨','bottom:26px;left:30px')+
 st('🌷','bottom:22px;right:26px')
 },
 {
-h:pol('photo4.jpg','One of my favourite people.',-2,-5)+
+h:pol('photo1.jpg','One of my favourite people.',-2,-5)+
 st('🎀','top:14px;left:12px;font-size:32px')+
 st('🦋','bottom:18px;right:18px')+
 st('✨','top:40px;right:20px')
 },
 {
 alt:1,
-h:pol('photo4.jpg','A memory worth keeping ♡',2,4)+
+h:pol('photo2.jpg','A memory worth keeping ♡',2,4)+
 st('🌸','top:12px;right:14px;font-size:32px')+
 st('💗','bottom:16px;left:20px')+
 st('✨','bottom:60px;right:14px')
 },
 {
-h:pol('photo2.jpg','Us being us 😭',-2.5,-3)+
+h:pol('photo3.jpg','Us being us 😭',-2.5,-3)+
 st('🎀','top:14px;right:16px;font-size:32px')+
 st('🌷','bottom:14px;left:16px')+
 st('🦋','top:60px;left:14px')
 },
 {
 alt:1,
-h:pol('photo1.jpg','Some moments never get old.',1.5,5)+
+h:pol('photo4.jpg','Some moments never get old.',1.5,5)+
 st('🌸','top:12px;left:14px;font-size:32px')+
 st('💗','bottom:18px;right:20px')+
 st('✨','top:70px;right:16px')
@@ -269,6 +271,7 @@ function size(){
 cv.width=innerWidth;
 cv.height=innerHeight;
 }
+
 size();
 addEventListener('resize',size);
 
