@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday Ankita ♡</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎀</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="fx" aria-hidden="true"></div>
+<button id="sound" aria-label="Music on/off">🎵</button>
+<audio id="bgm" src="music/song.mp3" loop preload="auto"></audio>
+<audio id="hbd" src="music/happybirthday.mp3" preload="auto"></audio>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<!-- 1. WELCOME -->
+<section class="screen active" id="welcome">
+  <div class="bow big" data-bow></div>
+  <p class="script small">Happy Birthday</p>
+  <h1 class="huge nm">Ankita</h1>
+  <p class="serif-note">a little surprise, made with love ♡</p>
+  <button class="btn" id="openBtn">Tap to open</button>
+</section>
+
+<!-- 2. ENVELOPE -->
+<section class="screen" id="envelope">
+  <p class="hint">A letter has arrived for you… tap the envelope</p>
+  <div class="env" id="env" role="button" tabindex="0" aria-label="Open the envelope">
+    <div class="paper"></div>
+    <div class="front"></div>
+    <div class="flap"></div>
+    <div class="seal"><div class="bow" data-bow></div></div>
+  </div>
+</section>
+
+<!-- 3-6. LETTER -->
+<section class="screen" id="letter">
+  <p class="hint" id="letterHint">Tap the bow to untie it ♡</p>
+  <div class="scroll" id="scroll">
+    <div class="roller"></div>
+    <div class="sheet">
+      <div class="letter-paragraphs">
+                                <p class="lead-paragraph">
+                                    <span class="drop-cap">H</span>APPIEST BIRTHDAYYYYY to one of my absolute favourite people in the entire world! 🎂🥹💗 You truly have no idea what you mean to me. I love talking to you sooo much — like, I can literally talk to you for hours and hours and we still won't run out of things to say!
+                                </p>
+
+                                <p>
+                                    We vibe so effortlessly, both of us speaking nonstop, bonding over our intense love for food 🍕🍜, dancing like nobody is watching 💃, and the way we gossip... omg, iconic! ☕💅 May all your wishes, dreams, and deepest desires come true.
+                                </p>
+
+                                <p>
+                                    And honestly, I felt so shameful asking you for our pictures because I barely had any — but let's be real, that's entirely your issue because you're always clicking everything on your phone! 😭📸 I know this birthday you're alone, but no worries at all my love, my thoughts and heart are right there with you celebrating every second. 💕
+                                </p>
+
+                                <p>
+                                    And yaaa, the tea you give me is awesome... like, clock it! ⏰☕ I truly think you are someone I could never, ever forget. I really want our friendship to continue long after this university ends. I want to attend your marriage, cheer for every success, and celebrate every single milestone with you. I want you to always be successful, radiant, happy, and smiling! 🌸
+                                </p>
+
+                                <div class="letter-quote-box">
+                                    <span class="quote-symbol">“</span>
+                                    <p class="quote-text">
+                                        You have taught me a lot of things in life... like: <br>
+                                        <em>“Chahe kitni bhi fatt ke chausath ho... reels chhodna nahi!”</em> 😂💀
+                                    </p>
+                                    <span class="quote-symbol right">”</span>
+                                </div>
+
+                                <p>
+                                    Jokes aside, you bring so much genuine laughter into my life and we share everything with each other. There is a pure kind of <em>sukoon</em> whenever I talk to you. I don't understand how time passes so fast... from second semester until today, it feels like we just met a few days ago! 🥺
+                                </p>
+
+                                <p>
+                                    I know there were misunderstandings and there will probably be more in the future too, and that's okay — we will always patch up and have each other's backs no matter what. I am truly sorry from the bottom of my heart if I ever hurt you, and <strong class="calligraphy-highlight">THANK YOU so, so much my girl for being in my life.</strong> 🫂💖
+                                </p>
+
+                                <p>
+                                    You are my partner in crime, my top gossip partner, and honestly, university does not even exist without you — without you I am just a blank person! 🥹 I really love you lots and lots.
+                                </p>
+
+                                <p class="cheers-line">
+                                    Happy Birthday once again! You turn 20 if I am right, so <span class="pink-shimmer">CHEERS TO 20! 🥂✨</span> Be happy, be smiling, be immensely successful, and always remember: <strong>I LOVE YOU SOOO MUCH!</strong> 🎀💖🎂
+                                </p>
+                            </div>
+
+                            <footer class="letter-signature">
+                                <p class="signature-closing">Forever your gossip partner & favourite human,</p>
+                                <p class="signature-name">Arbiya ♡</p>
+                            </footer>
+                        </article>
+    </div>
+    <div class="roller"></div>
+    <div class="band" id="band"><div class="bow" id="scrollBow" data-bow></div></div>
+  </div>
+  <button class="btn hidden" id="albumBtn">Open our album ♡</button>
+</section>
+
+<!-- 7-8. ALBUM -->
+<section class="screen" id="album">
+  <div class="book-wrap"><div class="book" id="book"></div></div>
+  <div class="nav">
+    <button class="round" id="prev" aria-label="Previous page">‹</button>
+    <span id="pageNo" class="script">1</span>
+    <button class="round" id="next" aria-label="Next page">›</button>
+  </div>
+</section>
+
+<!-- 9-10. FINALE -->
+<section class="screen" id="finale">
+  <h2 class="huge2 nm">Happy Birthday,<br>Ankita!</h2>
+  <div class="cake" id="cake">
+    <div class="candles"><i><b></b></i><i><b></b></i><i><b></b></i></div>
+    <div class="tier t1"></div><div class="tier t2"></div><div class="plate"></div>
+  </div>
+  <button class="btn" id="blowBtn">Make a wish &amp; blow the candles 🕯️</button>
+  <div class="wishes hidden" id="wishes">
+    <p>May your year be soft, sweet and full of laughter. 🌸</p>
+    <p>May you always be surrounded by people who love you. 🎀</p>
+    <p>And may our friendship keep making beautiful memories. ♡</p>
+    <p class="sign nm">I love you, Ankita. Happy Birthday! 🦋</p>
+    <button class="btn ghost" id="replayBtn">Replay the surprise ↺</button>
+  </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
